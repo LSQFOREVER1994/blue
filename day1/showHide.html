@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>showHide</title>
+	<style type="text/css">
+		#div1{
+			width:200px;
+			height:200px;
+			background:#abcdef;
+			display:none;
+		}
+	</style>
+</head>
+<body>
+<div id="div1"></div>
+<input type="button" value="show" id="btn1"/>
+<script type="text/javascript">
+	var oDiv=document.getElementById("div1");
+	var oBtn=document.getElementById("btn1");
+	function showHide(){
+		if(oDiv.style.display=='none'){
+			oDiv.style.display='block';
+			oBtn.value='hide';
+		}else{
+			oDiv.style.display='none';
+			oBtn.value='show';
+		}
+	}
+	oBtn.onclick=showHide;
+</script>
+</body>
+</html>
