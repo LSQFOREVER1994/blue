@@ -7,18 +7,18 @@
 		#div1{
 			width:200px;
 			height:200px;
-			background:#accedf;
+			background:#abcdef; 
 			display:none;
 		}
 	</style>
 </head>
 <body>
 <div id="div1"></div>
-<input id="btn1" type="button" value="show"/>
+<input id="btn1" type="button" value="显示"/>
 <script type="text/javascript">
 	function getStyle(ele){
 		if(getComputedStyle){
-			return getComputedStyle(ele,false);
+			return getComputedStyle(ele);
 		}else{
 			return ele.currentStyle;
 		}
@@ -28,10 +28,10 @@
 	function showHide(){
 		if(getStyle(oDiv).display=="none"){
 			oDiv.style.display="block";
-			oBtn.value="hide";
+			oBtn.value="隐藏";
 		}else{
-			oDiv.style.display="none"
-			oBtn.value="show";
+			oDiv.style.display="none";
+			oBtn.value="显示";
 		}
 	}
 	oBtn.addEventListener("click",showHide);
@@ -42,7 +42,7 @@
 		}else{
 			oDiv.style.width="300px";
 			oDiv.style.height="300px";
-		}		
+		}
 	})
 </script>
 </body>
