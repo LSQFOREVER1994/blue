@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>showHideTwo</title>
+	<style type="text/css">
+		#div1{
+			width:200px;
+			height:200px;
+			background:#accedf;
+			display:none;
+		}
+	</style>
+</head>
+<body>
+<div id="div1"></div>
+<input id="btn1" type="button" value="show"/>
+<script type="text/javascript">
+	function getStyle(ele){
+		if(getComputedStyle){
+			return getComputedStyle(ele,false);
+		}else{
+			return ele.currentStyle;
+		}
+	}
+	var oDiv=document.getElementById("div1");
+	var oBtn=document.getElementById("btn1");
+	function showHide(){
+		if(getStyle(oDiv).display=="none"){
+			oDiv.style.display="block";
+			oBtn.value="hide";
+		}else{
+			oDiv.style.display="none"
+			oBtn.value="show";
+		}
+	}
+	oBtn.addEventListener("click",showHide);
+	oBtn.addEventListener("click",function(){
+		if(parseInt(getStyle(oDiv).width)<300){
+			oDiv.style.width=parseInt(getStyle(oDiv).width)+45+"px";
+			oDiv.style.height=parseInt(getStyle(oDiv).height)+45+"px";
+		}else{
+			oDiv.style.width="300px";
+			oDiv.style.height="300px";
+		}		
+	})
+</script>
+</body>
+</html>
